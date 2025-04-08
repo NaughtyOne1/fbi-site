@@ -74,7 +74,7 @@
   </div>
 
   <script>
-  function showError(e) {
+     function showError(e) {
     e.preventDefault();
     const agentID = document.querySelector('input[type="text"]').value.toLowerCase();
     const accessCode = document.querySelector('input[type="password"]').value.toLowerCase();
@@ -87,9 +87,11 @@
     }
   }
 
-  document.getElementById('error').style.display = 'none';
-</script>
-    
+  // Hide the error message on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('error').style.display = 'none';
+  });
+  
     }
   </script>
 </body>
