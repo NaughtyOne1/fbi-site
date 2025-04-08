@@ -6,6 +6,25 @@
   <title>FBI - Federal Bureau of Investigation</title>
   <link rel="icon" href="https://fbiauthorized.net/favicon.png" type="image/png">
   <style>
+    .dark-mode {
+  background-color: #111;
+  color: #eee;
+}
+
+.dark-mode .badge,
+.dark-mode form,
+.dark-mode input[type="submit"],
+.dark-mode input[type="email"],
+.dark-mode input[type="text"],
+.dark-mode input[type="password"] {
+  background-color: #222;
+  color: #fff;
+  border: none;
+}
+
+.dark-mode a {
+  color: #99ccff;
+}
     body {
       margin: 0;
       padding: 0;
@@ -140,4 +159,25 @@
   </footer>
 
 </body>
+  <button id="darkModeToggle" style="
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+">
+  Toggle Dark Mode
+</button>
+  <script>
+  const toggleBtn = document.getElementById('darkModeToggle');
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
 </html>
