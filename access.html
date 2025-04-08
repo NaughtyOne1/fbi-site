@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Access Portal</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      font-family: 'Helvetica Neue', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      width: 300px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 4px;
+      background-color: #222;
+      color: white;
+    }
+
+    input[type="submit"] {
+      background-color: #444;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .error {
+      color: #f33;
+      font-size: 0.9em;
+      text-align: center;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .back-link {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>Secure Agent Access</h1>
+  <form onsubmit="showError(event)">
+    <input type="text" placeholder="Agent ID" required>
+    <input type="password" placeholder="Access Code" required>
+    <input type="submit" value="Enter">
+    <div class="error" id="error">Authorization failed. Incident logged.</div>
+  </form>
+  <div class="back-link">
+    <a href="index.html" style="color:#ccc;">Return to main site</a>
+  </div>
+
+  <script>
+    function showError(e) {
+      e.preventDefault();
+      const error = document.getElementById('error');
+      error.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
