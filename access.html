@@ -74,23 +74,31 @@
   </div>
 
   <script>
-     function showError(e) {
-    e.preventDefault();
+  // Get the form element
+  const form = document.getElementById('loginForm');
+  
+  // Listen for form submit
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Get the values from the input fields
     const agentID = document.querySelector('input[type="text"]').value.toLowerCase();
     const accessCode = document.querySelector('input[type="password"]').value.toLowerCase();
 
+    // Check for the secret code
     if (accessCode === "alpha69") {
-      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Redirect to Rickroll
     } else {
+      // Show error if wrong code
       const error = document.getElementById('error');
       error.style.display = 'block';
     }
-  }
+  });
 
-  // Hide the error message on page load
+  // Hide error message on page load
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('error').style.display = 'none';
   });
-  </script>
+</script>
 </body>
 </html>
