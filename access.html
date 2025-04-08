@@ -74,10 +74,23 @@
   </div>
 
   <script>
-    function showError(e) {
-      e.preventDefault();
+    <script>
+  function showError(e) {
+    e.preventDefault();
+    const agentID = document.querySelector('input[type="text"]').value.toLowerCase();
+    const accessCode = document.querySelector('input[type="password"]').value.toLowerCase();
+
+    if (accessCode === "alpha69") {
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    } else {
       const error = document.getElementById('error');
       error.style.display = 'block';
+    }
+  }
+
+  document.getElementById('error').style.display = 'none';
+</script>
+    
     }
   </script>
 </body>
