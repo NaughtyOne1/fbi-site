@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FBI - Federal Bureau of Investigation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f5f5f5;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin-bottom: 2em;
+      color: #444;
+    }
+
+    .badge {
+      border: 2px solid #222;
+      border-radius: 10px;
+      padding: 20px 30px;
+      margin-bottom: 2em;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .badge h2 {
+      margin: 0 0 0.3em 0;
+      font-size: 1.4em;
+      color: #222;
+    }
+
+    .badge p {
+      margin: 0;
+      font-size: 1em;
+      color: #666;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 260px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #111;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #333;
+    }
+
+    footer {
+      margin-top: 3em;
+      font-size: 0.8em;
+      color: #aaa;
+    }
+
+    .fineprint {
+      font-size: 0.75em;
+      color: #999;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>FBI</h1>
+  <p>Welcome to the official homepage of the Federal Bureau of Inspection.  
+     Our operations are classified, our presence is discreet, and our focus is... highly specialized.</p>
+
+  <div class="badge">
+    <h2>Federal Bureau of Inspection</h2>
+    <p>Field Operative ID: 00069<br>Department: Female Body Inspection</p>
+  </div>
+
+  <form>
+    <label for="email">Request access credentials:</label>
+    <input type="email" id="email" name="email" placeholder="agent@fbi.net" required>
+    <input type="submit" value="Request Access">
+  </form>
+
+  <div class="fineprint">*This site is strictly confidential. Unauthorized laughter is encouraged.</div>
+
+  <footer>
+    &copy; 2025 fbi.net – All rights reserved.
+  </footer>
+
+</body>
+</html>
