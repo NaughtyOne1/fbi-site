@@ -117,41 +117,66 @@
       margin-top: 1em;
     }
 
-    /* Dark Mode Styling */
+    /* Improved Dark Mode */
     .dark-mode {
       background-color: #121212;
-      color: #f5f5f5;
+      color: #f0f0f0;
     }
 
-    .dark-mode .badge,
-    .dark-mode form,
-    .dark-mode input[type="submit"],
-    .dark-mode input[type="email"],
-    .dark-mode input[type="text"],
-    .dark-mode input[type="password"],
-    .dark-mode #accessCode {
-      background-color: #1e1e1e;
-      color: #f5f5f5;
-      border: 1px solid #444;
+    .dark-mode h1 {
+      color: #f0f0f0;
     }
 
-    .dark-mode .badge h2 {
-      color: #fff;
-    }
-
-    .dark-mode .badge p,
     .dark-mode p,
     .dark-mode label,
     .dark-mode .fineprint {
       color: #ccc;
     }
 
-    .dark-mode a {
-      color: #66ccff;
+    .dark-mode .badge {
+      background-color: #1e1e1e;
+      border: 2px solid #555;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .dark-mode .badge h2 {
+      color: #fff;
+    }
+
+    .dark-mode .badge p {
+      color: #bbb;
+    }
+
+    .dark-mode form,
+    .dark-mode .access-hint {
+      background-color: transparent;
+    }
+
+    .dark-mode input[type="email"],
+    .dark-mode #accessCode {
+      background-color: #2a2a2a;
+      color: #f0f0f0;
+      border: 1px solid #555;
     }
 
     .dark-mode input::placeholder {
       color: #888;
+    }
+
+    .dark-mode input[type="submit"],
+    .dark-mode .access-hint button {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #666;
+    }
+
+    .dark-mode input[type="submit"]:hover,
+    .dark-mode .access-hint button:hover {
+      background-color: #555;
+    }
+
+    .dark-mode a {
+      color: #66ccff;
     }
   </style>
 </head>
