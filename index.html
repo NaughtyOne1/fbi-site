@@ -6,31 +6,11 @@
   <title>FBI - Federal Bureau of Investigation</title>
   <link rel="icon" href="https://fbiauthorized.net/favicon.png" type="image/png" />
   <style>
-    .dark-mode {
-      background-color: #111;
-      color: #eee;
-    }
-
-    .dark-mode .badge,
-    .dark-mode form,
-    .dark-mode input[type="submit"],
-    .dark-mode input[type="email"],
-    .dark-mode input[type="text"],
-    .dark-mode input[type="password"] {
-      background-color: #222;
-      color: #fff;
-      border: none;
-    }
-
-    .dark-mode a {
-      color: #99ccff;
-    }
-
     body {
       margin: 0;
       padding: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f5f5f5;
+      background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
       color: #111;
       display: flex;
       flex-direction: column;
@@ -91,7 +71,8 @@
       gap: 10px;
     }
 
-    input[type="email"] {
+    input[type="email"],
+    #accessCode {
       padding: 10px;
       font-size: 1em;
       border: 1px solid #ccc;
@@ -99,7 +80,8 @@
       width: 260px;
     }
 
-    input[type="submit"] {
+    input[type="submit"],
+    .access-hint button {
       padding: 10px 20px;
       font-size: 1em;
       background-color: #111;
@@ -109,7 +91,8 @@
       cursor: pointer;
     }
 
-    input[type="submit"]:hover {
+    input[type="submit"]:hover,
+    .access-hint button:hover {
       background-color: #333;
     }
 
@@ -118,26 +101,8 @@
     }
 
     .access-hint input {
-      padding: 8px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
       width: 200px;
       margin-right: 10px;
-    }
-
-    .access-hint button {
-      padding: 8px 14px;
-      font-size: 1em;
-      background-color: #111;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .access-hint button:hover {
-      background-color: #333;
     }
 
     footer {
@@ -151,17 +116,55 @@
       color: #999;
       margin-top: 1em;
     }
+
+    /* Dark Mode Styling */
+    .dark-mode {
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+
+    .dark-mode .badge,
+    .dark-mode form,
+    .dark-mode input[type="submit"],
+    .dark-mode input[type="email"],
+    .dark-mode input[type="text"],
+    .dark-mode input[type="password"],
+    .dark-mode #accessCode {
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+      border: 1px solid #444;
+    }
+
+    .dark-mode .badge h2 {
+      color: #fff;
+    }
+
+    .dark-mode .badge p,
+    .dark-mode p,
+    .dark-mode label,
+    .dark-mode .fineprint {
+      color: #ccc;
+    }
+
+    .dark-mode a {
+      color: #66ccff;
+    }
+
+    .dark-mode input::placeholder {
+      color: #888;
+    }
   </style>
 </head>
-
 <body>
+
+  <!-- Toggle Dark Mode Button -->
   <button id="darkModeToggle" style="
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: #222;
+    background-color: #333;
     color: #fff;
-    border: none;
+    border: 1px solid #555;
     padding: 8px 14px;
     border-radius: 5px;
     cursor: pointer;
@@ -174,33 +177,33 @@
   <p>Welcome to the official homepage of the Federal Bureau of Inspection.  
      Our operations are classified, our presence is discreet, and our focus is... highly specialized.</p>
 
-  <!-- FBI Badge Image -->
-  <img src="fbi-badge.png" alt="FBI Badge" class="fbi-badge-image">
+  <!-- Badge Image -->
+  <img src="fbi-badge.png" alt="FBI Badge" class="fbi-badge-image" />
 
   <div class="badge">
     <h2>Federal Bureau of Inspection</h2>
-    <p>Field Operative ID: 00069<br>Department: Female Body Inspection</p>
+    <p>Field Operative ID: 00069<br />Department: Female Body Inspection</p>
   </div>
 
   <!-- Email Form -->
   <form>
     <label for="email">Request access credentials:</label>
-    <input type="email" id="email" name="email" placeholder="agent@fbi.net" required>
-    <input type="submit" value="Request Access">
+    <input type="email" id="email" name="email" placeholder="agent@fbi.net" required />
+    <input type="submit" value="Request Access" />
   </form>
 
-  <!-- Fun Agent Hint -->
+  <!-- Secret Agent Hint -->
   <p style="font-size: 0.85em; color: #666; margin-top: 10px;">
     Hint: Field agents use the Greek alphabet… and never forget their favorite number.
   </p>
 
-  <!-- Secret Code Redirect -->
+  <!-- Code Entry -->
   <div class="access-hint">
-    <input type="text" id="accessCode" placeholder="Enter access code">
+    <input type="text" id="accessCode" placeholder="Enter access code" />
     <button onclick="checkAccessCode()">Submit Code</button>
   </div>
 
-  <!-- Agent Login Button -->
+  <!-- Login Link -->
   <a href="access.html" style="
     display: inline-block;
     margin-top: 30px;
@@ -222,11 +225,13 @@
   </footer>
 
   <script>
+    // Dark mode toggle
     const toggleBtn = document.getElementById('darkModeToggle');
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
 
+    // Secret code redirect
     function checkAccessCode() {
       const code = document.getElementById('accessCode').value.trim().toLowerCase();
       if (code === 'alpha69') {
