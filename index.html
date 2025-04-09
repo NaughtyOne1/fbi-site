@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FBI - Federal Bureau of Investigation</title>
-  <link rel="icon" href="https://fbiauthorized.net/favicon.png" type="image/png">
+  <link rel="icon" href="https://fbiauthorized.net/favicon.png" type="image/png" />
   <style>
     .dark-mode {
       background-color: #111;
@@ -60,7 +60,7 @@
       padding: 20px 30px;
       margin-bottom: 2em;
       background-color: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .badge h2 {
@@ -113,6 +113,33 @@
       background-color: #333;
     }
 
+    .access-hint {
+      margin-top: 30px;
+    }
+
+    .access-hint input {
+      padding: 8px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 200px;
+      margin-right: 10px;
+    }
+
+    .access-hint button {
+      padding: 8px 14px;
+      font-size: 1em;
+      background-color: #111;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .access-hint button:hover {
+      background-color: #333;
+    }
+
     footer {
       margin-top: 3em;
       font-size: 0.8em;
@@ -126,12 +153,6 @@
     }
   </style>
 </head>
-
-<meta property="og:title" content="FBI Authorized Access">
-<meta property="og:description" content="Confidential access granted. Field inspection in progress.">
-<meta property="og:image" content="https://fbiauthorized.net/preview.png">
-<meta property="og:url" content="https://fbiauthorized.net">
-<meta name="twitter:card" content="summary_large_image">
 
 <body>
   <button id="darkModeToggle" style="
@@ -161,12 +182,25 @@
     <p>Field Operative ID: 00069<br>Department: Female Body Inspection</p>
   </div>
 
+  <!-- Email Form -->
   <form>
     <label for="email">Request access credentials:</label>
     <input type="email" id="email" name="email" placeholder="agent@fbi.net" required>
     <input type="submit" value="Request Access">
   </form>
-  
+
+  <!-- Fun Agent Hint -->
+  <p style="font-size: 0.85em; color: #666; margin-top: 10px;">
+    Hint: Field agents use the Greek alphabet… and never forget their favorite number.
+  </p>
+
+  <!-- Secret Code Redirect -->
+  <div class="access-hint">
+    <input type="text" id="accessCode" placeholder="Enter access code">
+    <button onclick="checkAccessCode()">Submit Code</button>
+  </div>
+
+  <!-- Agent Login Button -->
   <a href="access.html" style="
     display: inline-block;
     margin-top: 30px;
@@ -192,6 +226,15 @@
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
+
+    function checkAccessCode() {
+      const code = document.getElementById('accessCode').value.trim().toLowerCase();
+      if (code === 'alpha69') {
+        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+      } else {
+        alert("Access Denied. You're not a certified agent... yet.");
+      }
+    }
   </script>
 </body>
 </html>
