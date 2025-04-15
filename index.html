@@ -117,7 +117,6 @@
       margin-top: 1em;
     }
 
-    /* Improved Dark Mode */
     .dark-mode {
       background-color: #121212;
       color: #f0f0f0;
@@ -145,11 +144,6 @@
 
     .dark-mode .badge p {
       color: #bbb;
-    }
-
-    .dark-mode form,
-    .dark-mode .access-hint {
-      background-color: transparent;
     }
 
     .dark-mode input[type="email"],
@@ -182,27 +176,11 @@
 </head>
 <body>
 
-  <!-- Toggle Dark Mode Button -->
-  <button id="darkModeToggle" style="
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
-    padding: 8px 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  ">
-    Toggle Dark Mode
-  </button>
+  <button id="darkModeToggle" style="position: absolute; top: 20px; right: 20px; background-color: #333; color: #fff; border: 1px solid #555; padding: 8px 14px; border-radius: 5px; cursor: pointer; font-weight: bold;">Toggle Dark Mode</button>
 
   <h1>FBI</h1>
-  <p>Welcome to the official homepage of the Federal Bureau of Inspection.  
-     Our operations are classified, our presence is discreet, and our focus is... highly specialized.</p>
+  <p>Welcome to the official homepage of the Federal Bureau of Inspection. Our operations are classified, our presence is discreet, and our focus is... highly specialized.</p>
 
-  <!-- Badge Image -->
   <img src="fbi-badge.png" alt="FBI Badge" class="fbi-badge-image" />
 
   <div class="badge">
@@ -210,53 +188,56 @@
     <p>Field Operative ID: 00069<br />Department: Female Body Inspection</p>
   </div>
 
-  <!-- Email Form -->
   <form>
     <label for="email">Request access credentials:</label>
     <input type="email" id="email" name="email" placeholder="agent@fbi.net" required />
     <input type="submit" value="Request Access" />
   </form>
 
-  <!-- Secret Agent Hint -->
-  <p style="font-size: 0.85em; color: #666; margin-top: 10px;">
-    Hint: Field agents use the Greek alphabet… and never forget their favorite number.
-  </p>
+  <p style="font-size: 0.85em; color: #666; margin-top: 10px;">Hint: Field agents use the Greek alphabet… and never forget their favorite number.</p>
 
-  <!-- Code Entry -->
   <div class="access-hint">
     <input type="text" id="accessCode" placeholder="Enter access code" />
     <button onclick="checkAccessCode()">Submit Code</button>
   </div>
 
-  <!-- Login Link -->
-  <a href="access.html" style="
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 20px;
-    background-color: #111;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    letter-spacing: 1px;
-  ">
-    AGENT LOGIN
-  </a>
+  <a href="access.html" style="display: inline-block; margin-top: 30px; padding: 12px 20px; background-color: #111; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; letter-spacing: 1px;">AGENT LOGIN</a>
 
   <div class="fineprint">*This site is strictly confidential. Unauthorized laughter is encouraged.</div>
 
-  <footer>
-    &copy; 2025 fbi.net – All rights reserved.
-  </footer>
+  <!-- FUN EXTRAS -->
+
+  <div style="max-width: 600px; margin: 60px auto 20px auto; padding: 30px; background-color: #111; color: #0f0; font-family: monospace; border: 2px solid #0f0; border-radius: 10px;">
+    <h2>FBI Authorization Scanner</h2>
+    <p>Upload your biometric credentials for cross-referencing...</p>
+    <input type="file" style="margin-bottom: 10px;" />
+    <button onclick="verifyFBI()" style="background-color: #0f0; color: #000; font-weight: bold; padding: 10px; border-radius: 4px;">Scan Now</button>
+    <div id="result" style="margin-top: 20px;"></div>
+  </div>
+
+  <div style="max-width: 600px; margin: 40px auto; padding: 20px; background-color: #f5f5f5; color: #000; font-family: Arial, sans-serif; border: 1px solid #ccc; border-radius: 10px;">
+    <h2>What Our Agents Are Saying</h2>
+    <blockquote>"Since I got FBI authorized, my Tinder matches doubled. Coincidence? I don’t think so." – Special Agent Kevin</blockquote>
+    <blockquote>"I showed my FBI badge at a gas station. Got 10% off. This is power." – Janet, Certified Surveillance Professional</blockquote>
+    <blockquote>"I was just a barista. Now I’m a barista with <em>federal influence</em>." – Ron, Stealth Division</blockquote>
+  </div>
+
+  <div style="max-width: 600px; margin: 40px auto 80px auto; padding: 20px; background-color: #222; color: #fff; font-family: Arial, sans-serif; border: 1px solid #444; border-radius: 10px;">
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Q: Can I legally detain someone now?</strong><br>A: Only if you shout “FBI! Freeze!” with enough confidence.</p>
+    <p><strong>Q: Is this real?</strong><br>A: Real is a social construct. Next question.</p>
+    <p><strong>Q: What does FBI stand for?</strong><br>A: <em>For Baguette Integrity.</em> We protect bread at all costs.</p>
+    <p><strong>Q: Can I get in trouble for this?</strong><br>A: Only if your vibe is off.</p>
+  </div>
+
+  <footer>&copy; 2025 fbi.net – All rights reserved.</footer>
 
   <script>
-    // Dark mode toggle
     const toggleBtn = document.getElementById('darkModeToggle');
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
 
-    // Secret code redirect
     function checkAccessCode() {
       const code = document.getElementById('accessCode').value.trim().toLowerCase();
       if (code === 'alpha69') {
@@ -264,6 +245,19 @@
       } else {
         alert("Access Denied. You're not a certified agent... yet.");
       }
+    }
+
+    function verifyFBI() {
+      const results = [
+        'Authorization Level: ALPHA OMEGA – Welcome, Agent.',
+        'You are 87% FBI and 13% Area 51 Intern.',
+        'Clearance granted… until someone finds out.',
+        'Unauthorized. You’ve seen too much.',
+        'FBI status: Pending. Please wait 3–5 government fiscal years.',
+        'Agent recognized. Initiating covert mode…'
+      ];
+      const randomResult = results[Math.floor(Math.random() * results.length)];
+      document.getElementById("result").innerHTML = '<p>' + randomResult + '</p>';
     }
   </script>
 </body>
