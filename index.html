@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      background: url('https://i.imgur.com/tcWvU5U.jpg') no-repeat center center fixed;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Top_secret_classified_red_stamp.svg/1280px-Top_secret_classified_red_stamp.svg.png') no-repeat center center fixed;
       background-size: cover;
       color: #111;
       display: flex;
@@ -38,13 +38,14 @@
       margin-bottom: 0.5em;
       text-transform: uppercase;
       letter-spacing: 2px;
+      color: #fff;
     }
 
     p {
       font-size: 1.1em;
       max-width: 600px;
       margin-bottom: 2em;
-      color: #eee;
+      color: #ddd;
     }
 
     .badge {
@@ -130,63 +131,8 @@
       margin-top: 1em;
     }
 
-    .dark-mode {
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-
-    .dark-mode h1 {
-      color: #f0f0f0;
-    }
-
-    .dark-mode p,
-    .dark-mode label,
-    .dark-mode .fineprint {
-      color: #ccc;
-    }
-
-    .dark-mode .badge {
-      background-color: #1e1e1e;
-      border: 2px solid #555;
-      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
-    }
-
-    .dark-mode .badge h2 {
-      color: #fff;
-    }
-
-    .dark-mode .badge p {
-      color: #bbb;
-    }
-
-    .dark-mode input[type="email"],
-    .dark-mode #accessCode {
-      background-color: #2a2a2a;
-      color: #f0f0f0;
-      border: 1px solid #555;
-    }
-
-    .dark-mode input::placeholder {
-      color: #888;
-    }
-
-    .dark-mode input[type="submit"],
-    .dark-mode .access-hint button {
-      background-color: #333;
-      color: #fff;
-      border: 1px solid #666;
-    }
-
-    .dark-mode input[type="submit"]:hover,
-    .dark-mode .access-hint button:hover {
-      background-color: #555;
-    }
-
-    .dark-mode a {
-      color: #66ccff;
-    }
-
-    .quiz, .secret-page {
+    .quiz,
+    .secret-page {
       margin-top: 3rem;
     }
 
@@ -200,6 +146,11 @@
       border-radius: 10px;
       max-width: 600px;
       margin: 2rem auto;
+    }
+
+    a {
+      color: #66ccff;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -218,7 +169,7 @@
   </div>
 
   <form>
-    <label for="email">Request access credentials:</label>
+    <label for="email" style="color: #fff;">Request access credentials:</label>
     <input type="email" id="email" name="email" placeholder="agent@fbi.net" required />
     <input type="submit" value="Request Access" />
   </form>
@@ -246,7 +197,7 @@
   </div>
 
   <!-- SECRET PAGE -->
-  <p><a href="#" onclick="document.getElementById('secretRoom').style.display='block'; return false;" style="color: #66ccff;">Click here if you’re not afraid of the truth...</a></p>
+  <p><a href="#" onclick="document.getElementById('secretRoom').style.display='block'; return false;">Click here if you’re not afraid of the truth...</a></p>
   <div id="secretRoom" class="secret-page">
     <h2>Training Room - Top Secret Access</h2>
     <p>Welcome, Agent. Your mission is to decode this message:</p>
@@ -254,6 +205,7 @@
     <p>Also, someone left a burrito in the evidence locker microwave. Deal with it before it becomes sentient.</p>
   </div>
 
+  <!-- SCANNER -->
   <div style="max-width: 600px; margin: 60px auto 20px auto; padding: 30px; background-color: #111; color: #0f0; font-family: monospace; border: 2px solid #0f0; border-radius: 10px;">
     <h2>FBI Authorization Scanner</h2>
     <p>Upload your biometric credentials for cross-referencing...</p>
@@ -262,6 +214,7 @@
     <div id="result" style="margin-top: 20px;"></div>
   </div>
 
+  <!-- TESTIMONIALS -->
   <div style="max-width: 600px; margin: 40px auto; padding: 20px; background-color: #f5f5f5; color: #000; font-family: Arial, sans-serif; border: 1px solid #ccc; border-radius: 10px;">
     <h2>What Our Agents Are Saying</h2>
     <blockquote>"Since I got FBI authorized, my Tinder matches doubled. Coincidence? I don’t think so." – Special Agent Kevin</blockquote>
@@ -269,6 +222,7 @@
     <blockquote>"I was just a barista. Now I’m a barista with <em>federal influence</em>." – Ron, Stealth Division</blockquote>
   </div>
 
+  <!-- FAQ -->
   <div style="max-width: 600px; margin: 40px auto 80px auto; padding: 20px; background-color: #222; color: #fff; font-family: Arial, sans-serif; border: 1px solid #444; border-radius: 10px;">
     <h2>Frequently Asked Questions</h2>
     <p><strong>Q: Can I legally detain someone now?</strong><br>A: Only if you shout “FBI! Freeze!” with enough confidence.</p>
