@@ -144,11 +144,18 @@
       color: #66ccff;
       text-decoration: underline;
     }
+
+    .video-container {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
-
-  <button id="darkModeToggle" style="position: absolute; top: 20px; right: 20px; background-color: #333; color: #fff; border: 1px solid #555; padding: 8px 14px; border-radius: 5px; cursor: pointer; font-weight: bold;">Toggle Dark Mode</button>
 
   <h1>FBI</h1>
   <p>Welcome to the official homepage of the Federal Bureau of Inspection. Our operations are classified, our presence is discreet, and our focus is... highly specialized.</p>
@@ -199,12 +206,12 @@
 
   <footer>&copy; 2025 fbi.net – All rights reserved.</footer>
 
-  <script>
-    const toggleBtn = document.getElementById('darkModeToggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
+  <!-- Hidden YouTube player (autoplay may need interaction depending on browser) -->
+  <div class="video-container">
+    <iframe id="mibPlayer" width="0" height="0" src="https://www.youtube.com/embed/fiBLgEx6svA?autoplay=1&mute=0&loop=1&playlist=fiBLgEx6svA" frameborder="0" allow="autoplay"></iframe>
+  </div>
 
+  <script>
     function checkAccessCode() {
       const code = document.getElementById('accessCode').value.trim().toLowerCase();
       if (code === 'alpha69') {
