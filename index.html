@@ -10,9 +10,9 @@
       margin: 0;
       padding: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Top_secret_classified_red_stamp.svg/1280px-Top_secret_classified_red_stamp.svg.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #111;
+      background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png') repeat;
+      background-color: #0a0a0a;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -22,30 +22,18 @@
       position: relative;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: -1;
-    }
-
     h1 {
       font-size: 2.5em;
       margin-bottom: 0.5em;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #fff;
     }
 
     p {
       font-size: 1.1em;
       max-width: 600px;
       margin-bottom: 2em;
-      color: #ddd;
+      color: #ccc;
     }
 
     .badge {
@@ -54,19 +42,19 @@
       padding: 20px 30px;
       margin-bottom: 2em;
       background-color: #fff;
+      color: #000;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .badge h2 {
       margin: 0 0 0.3em 0;
       font-size: 1.4em;
-      color: #222;
     }
 
     .badge p {
       margin: 0;
       font-size: 1em;
-      color: #666;
+      color: #444;
     }
 
     .fbi-badge-image {
@@ -152,6 +140,11 @@
       color: #66ccff;
       text-decoration: underline;
     }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
   </style>
 </head>
 <body>
@@ -169,12 +162,12 @@
   </div>
 
   <form>
-    <label for="email" style="color: #fff;">Request access credentials:</label>
+    <label for="email">Request access credentials:</label>
     <input type="email" id="email" name="email" placeholder="agent@fbi.net" required />
     <input type="submit" value="Request Access" />
   </form>
 
-  <p style="font-size: 0.85em; color: #ccc; margin-top: 10px;">Hint: Field agents use the Greek alphabet… and never forget their favorite number.</p>
+  <p style="font-size: 0.85em; color: #aaa; margin-top: 10px;">Hint: Field agents use the Greek alphabet… and never forget their favorite number.</p>
 
   <div class="access-hint">
     <input type="text" id="accessCode" placeholder="Enter access code" />
