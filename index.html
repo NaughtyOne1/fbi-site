@@ -10,7 +10,8 @@
       margin: 0;
       padding: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+      background: url('https://i.imgur.com/tcWvU5U.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #111;
       display: flex;
       flex-direction: column;
@@ -18,6 +19,18 @@
       justify-content: center;
       min-height: 100vh;
       text-align: center;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
     }
 
     h1 {
@@ -31,7 +44,7 @@
       font-size: 1.1em;
       max-width: 600px;
       margin-bottom: 2em;
-      color: #444;
+      color: #eee;
     }
 
     .badge {
@@ -172,6 +185,22 @@
     .dark-mode a {
       color: #66ccff;
     }
+
+    .quiz, .secret-page {
+      margin-top: 3rem;
+    }
+
+    .secret-page {
+      display: none;
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      padding: 20px;
+      border: 2px solid #0f0;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
   </style>
 </head>
 <body>
@@ -194,7 +223,7 @@
     <input type="submit" value="Request Access" />
   </form>
 
-  <p style="font-size: 0.85em; color: #666; margin-top: 10px;">Hint: Field agents use the Greek alphabet… and never forget their favorite number.</p>
+  <p style="font-size: 0.85em; color: #ccc; margin-top: 10px;">Hint: Field agents use the Greek alphabet… and never forget their favorite number.</p>
 
   <div class="access-hint">
     <input type="text" id="accessCode" placeholder="Enter access code" />
@@ -205,7 +234,25 @@
 
   <div class="fineprint">*This site is strictly confidential. Unauthorized laughter is encouraged.</div>
 
-  <!-- FUN EXTRAS -->
+  <!-- INTERACTIVE QUIZ -->
+  <div class="quiz" style="max-width: 600px; margin: 60px auto; padding: 30px; background-color: #fff; color: #000; border: 2px solid #222; border-radius: 10px;">
+    <h2>Are You FBI Material?</h2>
+    <p>1. You see someone putting pineapple on pizza. What do you do?</p>
+    <button onclick="alert('Correct. Surveillance activated.')">Alert pizza crimes division</button>
+    <br><br>
+    <p>2. Your password is “password123”. Is this:</p>
+    <button onclick="alert('Wrong. You’re now being watched.')">Secure</button>
+    <button onclick="alert('Correct. Suspiciously weak.')">Highly suspicious</button>
+  </div>
+
+  <!-- SECRET PAGE -->
+  <p><a href="#" onclick="document.getElementById('secretRoom').style.display='block'; return false;" style="color: #66ccff;">Click here if you’re not afraid of the truth...</a></p>
+  <div id="secretRoom" class="secret-page">
+    <h2>Training Room - Top Secret Access</h2>
+    <p>Welcome, Agent. Your mission is to decode this message:</p>
+    <pre>01101000 01110101 01101101 01101111 01110010</pre>
+    <p>Also, someone left a burrito in the evidence locker microwave. Deal with it before it becomes sentient.</p>
+  </div>
 
   <div style="max-width: 600px; margin: 60px auto 20px auto; padding: 30px; background-color: #111; color: #0f0; font-family: monospace; border: 2px solid #0f0; border-radius: 10px;">
     <h2>FBI Authorization Scanner</h2>
