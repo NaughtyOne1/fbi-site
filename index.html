@@ -145,7 +145,6 @@
       text-decoration: underline;
     }
 
-    /* Play Theme Button */
     #playBtn {
       position: fixed;
       bottom: 20px;
@@ -191,7 +190,7 @@
 
   <div class="fineprint">*This site is strictly confidential. Unauthorized laughter is encouraged.</div>
 
-  <!-- INTERACTIVE QUIZ -->
+  <!-- QUIZ -->
   <div class="quiz" style="max-width: 600px; margin: 60px auto; padding: 30px; background-color: #fff; color: #000; border: 2px solid #222; border-radius: 10px;">
     <h2>Are You FBI Material?</h2>
     <p>1. You see someone putting pineapple on pizza. What do you do?</p>
@@ -202,7 +201,7 @@
     <button onclick="alert('Correct. Suspiciously weak.')">Highly suspicious</button>
   </div>
 
-  <!-- SECRET PAGE -->
+  <!-- SECRET ROOM -->
   <p><a href="#" onclick="document.getElementById('secretRoom').style.display='block'; return false;">Click here if you’re not afraid of the truth...</a></p>
   <div id="secretRoom" class="secret-page">
     <h2>Training Room - Top Secret Access</h2>
@@ -213,18 +212,8 @@
 
   <footer>&copy; 2025 fbi.net – All rights reserved.</footer>
 
-  <!-- PLAY THEME BUTTON + YOUTUBE PLAYER -->
-  <button id="playBtn" onclick="playMusic()">Play Theme</button>
-
-  <div id="musicHolder" style="display: none;">
-    <iframe
-      width="0"
-      height="0"
-      src="https://www.youtube.com/embed/fiBLgEx6svA?autoplay=1&loop=1&playlist=fiBLgEx6svA"
-      frameborder="0"
-      allow="autoplay">
-    </iframe>
-  </div>
+  <!-- GET SCHWIFTY BUTTON -->
+  <button id="playBtn" onclick="playMusic()">Get Schwifty</button>
 
   <script>
     function checkAccessCode() {
@@ -250,7 +239,14 @@
     }
 
     function playMusic() {
-      document.getElementById("musicHolder").style.display = "block";
+      const iframe = document.createElement("iframe");
+      iframe.width = "0";
+      iframe.height = "0";
+      iframe.src = "https://www.youtube.com/embed/fiBLgEx6svA?autoplay=1&loop=1&playlist=fiBLgEx6svA";
+      iframe.allow = "autoplay";
+      iframe.frameBorder = "0";
+      document.body.appendChild(iframe);
+      document.getElementById("playBtn").style.display = "none";
     }
   </script>
 </body>
