@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>FBI - Federal Bureau of Investigation</title>
   <link rel="icon" href="https://fbiauthorized.net/favicon.png" type="image/png" />
   <style>
@@ -11,23 +11,26 @@
       margin: 0;
       padding: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      background-color: #000;
-      background-image: url('https://naughtyone1.github.io/fbi-site/confidential-bg.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
       position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://naughtyone1.github.io/fbi-site/confidential-bg.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      z-index: -1;
+    }
+
+    .overlay {
       position: fixed;
       top: 0;
       left: 0;
@@ -35,6 +38,18 @@
       height: 100%;
       background: rgba(0, 0, 0, 0.5);
       z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
 
     h1 {
@@ -166,57 +181,58 @@
   </style>
 </head>
 <body>
+  <div class="background-image"></div>
+  <div class="overlay"></div>
 
-  <h1>FBI</h1>
-  <p>Welcome to the official homepage of the Federal Bureau of Inspection. Our operations are classified, our presence is discreet, and our focus is... highly specialized.</p>
+  <div class="content">
+    <h1>FBI</h1>
+    <p>Welcome to the official homepage of the Federal Bureau of Inspection. Our operations are classified, our presence is discreet, and our focus is... highly specialized.</p>
 
-  <img src="fbi-badge.png" alt="FBI Badge" class="fbi-badge-image" />
+    <img src="fbi-badge.png" alt="FBI Badge" class="fbi-badge-image" />
 
-  <div class="badge">
-    <h2>Federal Bureau of Inspection</h2>
-    <p>Field Operative ID: 00069<br />Department: Female Body Inspection</p>
+    <div class="badge">
+      <h2>Federal Bureau of Inspection</h2>
+      <p>Field Operative ID: 00069<br />Department: Female Body Inspection</p>
+    </div>
+
+    <form>
+      <label for="email">Request access credentials:</label>
+      <input type="email" id="email" name="email" placeholder="agent@fbi.net" required />
+      <input type="submit" value="Request Access" />
+    </form>
+
+    <p style="font-size: 0.85em;">Hint: Field agents use the Greek alphabet… and never forget their favorite number.</p>
+
+    <div class="access-hint">
+      <input type="text" id="accessCode" placeholder="Enter access code" />
+      <button onclick="checkAccessCode()">Submit Code</button>
+    </div>
+
+    <a href="access.html" style="display: inline-block; margin-top: 30px; padding: 12px 20px; background-color: #111; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; letter-spacing: 1px;">AGENT LOGIN</a>
+
+    <div class="fineprint">*This site is strictly confidential. Unauthorized laughter is encouraged.</div>
+
+    <div class="quiz" style="max-width: 600px; margin: 60px auto; padding: 30px; background-color: #fff; color: #000; border: 2px solid #222; border-radius: 10px;">
+      <h2>Are You FBI Material?</h2>
+      <p>1. You see someone putting pineapple on pizza. What do you do?</p>
+      <button onclick="alert('Correct. Surveillance activated.')">Alert pizza crimes division</button>
+      <br><br>
+      <p>2. Your password is “password123”. Is this:</p>
+      <button onclick="alert('Wrong. You’re now being watched.')">Secure</button>
+      <button onclick="alert('Correct. Suspiciously weak.')">Highly suspicious</button>
+    </div>
+
+    <p><a href="#" onclick="document.getElementById('secretRoom').style.display='block'; return false;">Click here if you’re not afraid of the truth...</a></p>
+    <div id="secretRoom" class="secret-page">
+      <h2>Training Room - Top Secret Access</h2>
+      <p>Welcome, Agent. Your mission is to decode this message:</p>
+      <pre>01101000 01110101 01101101 01101111 01110010</pre>
+      <p>Also, someone left a burrito in the evidence locker microwave. Deal with it before it becomes sentient.</p>
+    </div>
+
+    <footer>&copy; 2025 fbi.net – All rights reserved.</footer>
   </div>
 
-  <form>
-    <label for="email">Request access credentials:</label>
-    <input type="email" id="email" name="email" placeholder="agent@fbi.net" required />
-    <input type="submit" value="Request Access" />
-  </form>
-
-  <p style="font-size: 0.85em;">Hint: Field agents use the Greek alphabet… and never forget their favorite number.</p>
-
-  <div class="access-hint">
-    <input type="text" id="accessCode" placeholder="Enter access code" />
-    <button onclick="checkAccessCode()">Submit Code</button>
-  </div>
-
-  <a href="access.html" style="display: inline-block; margin-top: 30px; padding: 12px 20px; background-color: #111; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; letter-spacing: 1px;">AGENT LOGIN</a>
-
-  <div class="fineprint">*This site is strictly confidential. Unauthorized laughter is encouraged.</div>
-
-  <!-- QUIZ -->
-  <div class="quiz" style="max-width: 600px; margin: 60px auto; padding: 30px; background-color: #fff; color: #000; border: 2px solid #222; border-radius: 10px;">
-    <h2>Are You FBI Material?</h2>
-    <p>1. You see someone putting pineapple on pizza. What do you do?</p>
-    <button onclick="alert('Correct. Surveillance activated.')">Alert pizza crimes division</button>
-    <br><br>
-    <p>2. Your password is “password123”. Is this:</p>
-    <button onclick="alert('Wrong. You’re now being watched.')">Secure</button>
-    <button onclick="alert('Correct. Suspiciously weak.')">Highly suspicious</button>
-  </div>
-
-  <!-- SECRET ROOM -->
-  <p><a href="#" onclick="document.getElementById('secretRoom').style.display='block'; return false;">Click here if you’re not afraid of the truth...</a></p>
-  <div id="secretRoom" class="secret-page">
-    <h2>Training Room - Top Secret Access</h2>
-    <p>Welcome, Agent. Your mission is to decode this message:</p>
-    <pre>01101000 01110101 01101101 01101111 01110010</pre>
-    <p>Also, someone left a burrito in the evidence locker microwave. Deal with it before it becomes sentient.</p>
-  </div>
-
-  <footer>&copy; 2025 fbi.net – All rights reserved.</footer>
-
-  <!-- GET SCHWIFTY BUTTON -->
   <button id="playBtn" onclick="playMusic()">Get Schwifty</button>
 
   <script>
