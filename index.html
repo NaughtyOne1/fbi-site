@@ -145,13 +145,20 @@
       text-decoration: underline;
     }
 
-    .video-container {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
+    /* Play Theme Button */
+    #playBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 10;
     }
   </style>
 </head>
@@ -206,9 +213,17 @@
 
   <footer>&copy; 2025 fbi.net – All rights reserved.</footer>
 
-  <!-- Hidden YouTube player (autoplay may need interaction depending on browser) -->
-  <div class="video-container">
-    <iframe id="mibPlayer" width="0" height="0" src="https://www.youtube.com/embed/fiBLgEx6svA?autoplay=1&mute=0&loop=1&playlist=fiBLgEx6svA" frameborder="0" allow="autoplay"></iframe>
+  <!-- PLAY THEME BUTTON + YOUTUBE PLAYER -->
+  <button id="playBtn" onclick="playMusic()">Play Theme</button>
+
+  <div id="musicHolder" style="display: none;">
+    <iframe
+      width="0"
+      height="0"
+      src="https://www.youtube.com/embed/fiBLgEx6svA?autoplay=1&loop=1&playlist=fiBLgEx6svA"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
   </div>
 
   <script>
@@ -232,6 +247,10 @@
       ];
       const randomResult = results[Math.floor(Math.random() * results.length)];
       document.getElementById("result").innerHTML = '<p>' + randomResult + '</p>';
+    }
+
+    function playMusic() {
+      document.getElementById("musicHolder").style.display = "block";
     }
   </script>
 </body>
